@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アーユルヴェーダ体質診断</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header>
+            <h1>アーユルヴェーダ体質診断</h1>
+            <div class="progress-container" id="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </header>
+
+        <!-- ホーム/紹介ページ -->
+        <section id="home" class="section active">
+            <div class="content">
+                <h2>アーユルヴェーダ体質診断へようこそ</h2>
+                <div class="intro-text">
+                    <p>アーユルヴェーダは5000年以上の歴史を持つインドの伝統医学です。</p>
+                    <p>アーユルヴェーダでは、人間の体質を「ヴァータ」「ピッタ」「カパ」の3つのドーシャ（エネルギー）で分類します。</p>
+                    <p><strong>プラクリティ（生まれつきの体質）</strong>は、あなたが生まれ持った基本的な体質を表します。これは一生を通じて基本的に変わらないものです。</p>
+                    <p><strong>ヴィクリティ（現在の状態）</strong>は、現在のあなたの心身の状態を表します。生活習慣や環境の影響によって変化します。</p>
+                    <p>この診断では、プラクリティとヴィクリティの両方を分析することで、より詳細な体質分析と、バランスを整えるための具体的なアドバイスを提供します。</p>
+                </div>
+                <div class="dosha-info">
+                    <div class="dosha-card">
+                        <h3>ヴァータ</h3>
+                        <p>風と空のエネルギー。動き、軽さ、乾燥、冷たさの特性を持ちます。</p>
+                    </div>
+                    <div class="dosha-card">
+                        <h3>ピッタ</h3>
+                        <p>火と水のエネルギー。熱さ、鋭さ、強度、流動性の特性を持ちます。</p>
+                    </div>
+                    <div class="dosha-card">
+                        <h3>カパ</h3>
+                        <p>水と地のエネルギー。安定性、重さ、冷たさ、滑らかさの特性を持ちます。</p>
+                    </div>
+                </div>
+                <button id="start-button" class="btn primary-btn">診断を始める</button>
+            </div>
+        </section>
+
+        <!-- プラクリティ診断セクション -->
+        <section id="prakriti-test" class="section">
+            <div class="content">
+                <h2>プラクリティ診断（生まれつきの体質）</h2>
+                <p class="instruction">以下の質問に、あなたの生まれつきの傾向や特徴に基づいて回答してください。</p>
+                <p class="instruction">※ 当てはまる…5、まあまあ当てはまる…4、どちらともいえない…3、あまり当てはまらない…2、当てはまらない…1</p>
+                
+                <div id="prakriti-questions" class="questions-container">
+                    <!-- 質問はJavaScriptで動的に生成されます -->
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button id="prakriti-prev" class="btn secondary-btn">前へ</button>
+                    <button id="prakriti-next" class="btn primary-btn">次へ</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- プラクリティ結果表示セクション -->
+        <section id="prakriti-result" class="section">
+            <div class="content">
+                <h2>プラクリティ診断結果</h2>
+                <div class="result-container">
+                    <div class="chart-container">
+                        <canvas id="prakriti-chart"></canvas>
+                    </div>
+                    <div class="result-text">
+                        <h3 id="prakriti-dosha-type">あなたの体質タイプ: </h3>
+                        <div id="prakriti-description"></div>
+                    </div>
+                </div>
+                <div class="next-steps">
+                    <p>現在の体調や状態を診断するには、ヴィクリティ診断を行ってください。</p>
+                    <button id="start-vikriti" class="btn primary-btn">ヴィクリティ診断を行う</button>
+                    <button id="finish-prakriti" class="btn secondary-btn">診断を終了する</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ヴィクリティ診断セクション -->
+        <section id="vikriti-test" class="section">
+            <div class="content">
+                <h2>ヴィクリティ診断（現在の状態）</h2>
+                <p class="instruction">以下の質問に、あなたの現在の状態や最近の傾向に基づいて回答してください。</p>
+                <p class="instruction">※ 当てはまる…4、まあまあ当てはまる…3、どちらともいえない…2、あまり当てはまらない…1、当てはまらない…0</p>
+                
+                <div id="vikriti-questions" class="questions-container">
+                    <!-- 質問はJavaScriptで動的に生成されます -->
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button id="vikriti-prev" class="btn secondary-btn">前へ</button>
+                    <button id="vikriti-next" class="btn primary-btn">次へ</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 総合結果表示セクション -->
+        <section id="final-result" class="section">
+            <div class="content">
+                <h2>総合診断結果</h2>
+                <div class="result-container">
+                    <div class="charts-comparison">
+                        <div class="chart-box">
+                            <h3>プラクリティ（生まれつきの体質）</h3>
+                            <div class="chart-container">
+                                <canvas id="prakriti-chart-final"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-box">
+                            <h3>ヴィクリティ（現在の状態）</h3>
+                            <div class="chart-container">
+                                <canvas id="vikriti-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-text">
+                        <h3 id="vikriti-dosha-type">現在の体質タイプ: </h3>
+                        <div id="vikriti-description"></div>
+                        <h3>バランス分析</h3>
+                        <div id="balance-analysis"></div>
+                        <h3>健康アドバイス</h3>
+                        <div id="health-advice"></div>
+                    </div>
+                </div>
+                <button id="restart" class="btn primary-btn">もう一度診断する</button>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer>
+            <p>© 2025 アーユルヴェーダ体質診断</p>
+        </footer>
+    </div>
+
+    <!-- スクリプト -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/diagnosis.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

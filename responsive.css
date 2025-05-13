@@ -1,0 +1,109 @@
+/* レスポンシブデザイン */
+
+/* タブレット向け */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .dosha-info {
+        flex-direction: column;
+    }
+    
+    .dosha-card {
+        margin: 10px 0;
+    }
+    
+    .charts-comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chart-box {
+        margin-bottom: 30px;
+    }
+}
+
+/* スマートフォン向け */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .progress-container {
+        width: 100%;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .question-item {
+        padding: 10px;
+    }
+    
+    .options {
+        justify-content: center;
+    }
+    
+    .option-label {
+        margin: 5px 10px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navigation-buttons button {
+        width: 100%;
+    }
+    
+    .chart-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .next-steps button {
+        margin: 10px 0;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* 小さいスマートフォン向け */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+    
+    .chart-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .option-text {
+        font-size: 0.7rem;
+    }
+}
